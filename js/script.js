@@ -50,10 +50,12 @@ const results = data => {
     const allData = data.docs;
     const dataSlice = allData.slice(0, 20);
 
+
     // show results 
-    dataSlice?.forEach(element => {
-        const singleCard = document.createElement('div');
-        singleCard.innerHTML = `
+    try {
+        dataSlice?.forEach(element => {
+            const singleCard = document.createElement('div');
+            singleCard.innerHTML = `
         <div class="col ">
             <div class="card">
                 <div class='img-bg'>
@@ -64,13 +66,19 @@ const results = data => {
                     <hr>
                     <h5>Author Name: ${element.author_name ? element.author_name : "Author not found!"}</h5>
                     <hr>
+                    <h5>Publisher Name: ${element.publisher ? element.publisher : "Publisher not found!"}</h5>
+                    <hr>
                     <h5>First Published in: ${element.first_publish_year ? element.first_publish_year : "Publish year not found!"}</h5>
                 </div>
             </div>
         </div >
     `;
-        resultsUi.appendChild(singleCard);
-    });
+            resultsUi.appendChild(singleCard);
+        });
+    }
+    catch (err) {
+        console.log(err.message);
+    }
     spinner('none');
 };
 
