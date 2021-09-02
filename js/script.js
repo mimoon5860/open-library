@@ -54,9 +54,9 @@ const results = data => {
     // show results 
     dataSlice?.forEach(element => {
         const singleCard = document.createElement('div');
+        singleCard.classList.add('col');
         singleCard.innerHTML = `
-        <div class="col ">
-            <div class="card">
+            <div class="card h-100">
                 <div class='img-bg'>
                     <img height='250px' src="https://covers.openlibrary.org/b/id/${element.cover_i ? element.cover_i : ''}-L.jpg " class="card-img-top" alt="Cover image">
                 </div>
@@ -70,7 +70,6 @@ const results = data => {
                     <h5>First Published in: ${element.first_publish_year ? element.first_publish_year : "Publish year not found!"}</h5>
                 </div>
             </div>
-        </div >
     `;
         resultsUi.appendChild(singleCard);
     });
