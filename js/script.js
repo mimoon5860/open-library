@@ -65,7 +65,7 @@ const results = data => {
                     <hr>
                     <h5>Author Name: ${element.author_name ? element.author_name : "Author not found!"}</h5>
                     <hr>
-                    <h5>Publisher Name: ${element.publisher ? element.publisher : "Publisher not found!"}</h5>
+                    <h5>Publisher Name: ${element.publisher ? element.publisher.slice(0, 1) : "Publisher not found!"}</h5>
                     <hr>
                     <h5>First Published in: ${element.first_publish_year ? element.first_publish_year : "Publish year not found!"}</h5>
                 </div>
