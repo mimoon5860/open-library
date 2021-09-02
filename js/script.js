@@ -52,10 +52,9 @@ const results = data => {
 
 
     // show results 
-    try {
-        dataSlice?.forEach(element => {
-            const singleCard = document.createElement('div');
-            singleCard.innerHTML = `
+    dataSlice?.forEach(element => {
+        const singleCard = document.createElement('div');
+        singleCard.innerHTML = `
         <div class="col ">
             <div class="card">
                 <div class='img-bg'>
@@ -73,12 +72,8 @@ const results = data => {
             </div>
         </div >
     `;
-            resultsUi.appendChild(singleCard);
-        });
-    }
-    catch (err) {
-        console.log(err.message);
-    }
+        resultsUi.appendChild(singleCard);
+    });
     spinner('none');
 };
 
