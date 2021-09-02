@@ -42,7 +42,7 @@ const results = data => {
     // result count 
     else {
         found.innerHTML = `
-        <h3 class='text-success'>Result Found: ${data.numFound}</h3>
+        <h3 class='text-success'>Result Found: ${data.numFound ? data.numFound : 'total not found!'}</h3>
     `;
     }
 
